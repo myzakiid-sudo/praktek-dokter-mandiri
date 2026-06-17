@@ -43,7 +43,7 @@ include 'includes/header.php';
         <div class="bg-purple-50 p-4 rounded-lg border border-purple-100">
             <h3 class="font-bold text-purple-700">Manajemen Stok</h3>
             <p class="text-sm text-gray-600 mt-1">Pantau stok obat di apotek.</p>
-            <a href="#" class="mt-3 inline-block text-sm text-purple-600 font-semibold hover:underline">Buka Modul &rarr;</a>
+            <a href="modul/stok/index.php" class="mt-3 inline-block text-sm text-purple-600 font-semibold hover:underline">Buka Modul &rarr;</a>
         </div>
 
         <div class="bg-indigo-50 p-4 rounded-lg border border-indigo-100">
