@@ -26,11 +26,17 @@ include 'includes/header.php';
             <p class="text-sm text-gray-600 mt-1">Pendaftaran pasien hari ini.</p>
             <a href="modul/kunjungan/index.php" class="mt-3 inline-block text-sm text-green-600 font-semibold hover:underline">Buka Modul &rarr;</a>
         </div>
+        <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+            <h3 class="font-bold text-red-700">Rekam Medis</h3>
+            <p class="text-sm text-gray-600 mt-1">Kelola riwayat klinis pasien.</p>
+            <a href="modul/rekam_medis/index.php" class="mt-3 inline-block text-sm text-red-600 font-semibold hover:underline">Buka Modul &rarr;</a>
+        </div>
         <div class="bg-purple-50 p-4 rounded-lg border border-purple-100">
             <h3 class="font-bold text-purple-700">Manajemen Stok</h3>
             <p class="text-sm text-gray-600 mt-1">Pantau stok obat di apotek.</p>
             <a href="#" class="mt-3 inline-block text-sm text-purple-600 font-semibold hover:underline">Buka Modul &rarr;</a>
         </div>
+
     </div>
 </div>
 
