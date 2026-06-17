@@ -36,37 +36,65 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 include '../../includes/header.php';
 ?>
 
-<div class="bg-white shadow rounded-lg p-6 border border-gray-200 mt-4 max-w-2xl mx-auto">
+<div class="mb-4">
+    <nav class="flex text-sm text-gray-500 font-medium" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li class="inline-flex items-center">
+                <a href="../../dashboard.php" class="inline-flex items-center text-gray-500 hover:text-blue-600 transition duration-150">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <div class="flex items-center">
+                    <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                    <a href="index.php" class="ml-1 md:ml-2 text-gray-500 hover:text-blue-600 transition duration-150">Kunjungan</a>
+                </div>
+            </li>
+            <li aria-current="page">
+                <div class="flex items-center">
+                    <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                    <span class="ml-1 md:ml-2 text-gray-700">Daftar Antrean</span>
+                </div>
+            </li>
+        </ol>
+    </nav>
+</div>
+
+<div class="bg-white shadow-md rounded-xl p-6 md:p-8 border border-gray-100 max-w-2xl mx-auto">
     <div class="flex items-center justify-between mb-6">
         <h2 class="text-2xl font-bold text-gray-800">Pendaftaran Antrean Pasien</h2>
-        <a href="index.php" class="text-gray-500 hover:text-gray-700">&larr; Kembali</a>
+        <a href="index.php" class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 transition duration-150">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Kembali
+        </a>
     </div>
 
-    <form action="" method="POST">
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">Pilih Pasien</label>
-            <select name="patient_id" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                <option value="">-- Cari Pasien --</option>
+    <form action="" method="POST" class="space-y-5">
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Pilih Pasien <span class="text-red-500">*</span></label>
+            <select name="patient_id" class="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition duration-150 ease-in-out shadow-sm" required>
+                <option value="" disabled selected>-- Cari Pasien --</option>
                 <?php while($p = $pasien_query->fetch_assoc()): ?>
                     <option value="<?php echo $p['patient_id']; ?>"><?php echo htmlspecialchars($p['nama']); ?></option>
                 <?php endwhile; ?>
             </select>
-            <p class="text-xs text-gray-500 mt-1">Jika nama tidak ada, <a href="../pasien/tambah.php" class="text-blue-500 underline">tambah data pasien baru dulu</a>.</p>
+            <p class="text-xs text-gray-500 mt-2">Jika nama tidak ada, <a href="../pasien/tambah.php" class="text-blue-600 hover:text-blue-800 font-medium underline">tambah data pasien baru dulu</a>.</p>
         </div>
         
-        <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2">Pilih Dokter Pemeriksa</label>
-            <select name="dokter_id" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                <option value="">-- Pilih Dokter --</option>
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Pilih Dokter Pemeriksa <span class="text-red-500">*</span></label>
+            <select name="dokter_id" class="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition duration-150 ease-in-out shadow-sm" required>
+                <option value="" disabled selected>-- Pilih Dokter --</option>
                 <?php while($d = $dokter_query->fetch_assoc()): ?>
                     <option value="<?php echo $d['dokter_id']; ?>"><?php echo htmlspecialchars($d['nama']); ?> (Poli <?php echo htmlspecialchars($d['spesialisasi']); ?>)</option>
                 <?php endwhile; ?>
             </select>
         </div>
 
-        <div class="mb-6">
-            <label class="block text-gray-700 text-sm font-bold mb-2">Jenis Layanan</label>
-            <select name="jenis_layanan" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+        <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Jenis Layanan <span class="text-red-500">*</span></label>
+            <select name="jenis_layanan" class="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus:bg-white transition duration-150 ease-in-out shadow-sm" required>
                 <option value="Konsultasi Umum">Konsultasi Umum</option>
                 <option value="Pemeriksaan Rutin">Pemeriksaan Rutin</option>
                 <option value="Tindakan Medis">Tindakan Medis Ringan</option>
@@ -74,8 +102,9 @@ include '../../includes/header.php';
             </select>
         </div>
 
-        <div class="flex justify-end">
-            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline transition duration-150">
+        <div class="flex justify-end pt-4 border-t border-gray-100">
+            <button type="submit" class="inline-flex items-center px-6 py-2.5 bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 text-white font-semibold rounded-lg transition duration-150 shadow-sm focus:outline-none">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 Daftarkan Antrean
             </button>
         </div>
