@@ -24,7 +24,7 @@ include 'includes/header.php';
         <div class="bg-green-50 p-4 rounded-lg border border-green-100">
             <h3 class="font-bold text-green-700">Kunjungan</h3>
             <p class="text-sm text-gray-600 mt-1">Pendaftaran pasien hari ini.</p>
-            <a href="#" class="mt-3 inline-block text-sm text-green-600 font-semibold hover:underline">Buka Modul &rarr;</a>
+            <a href="modul/kunjungan/index.php" class="mt-3 inline-block text-sm text-green-600 font-semibold hover:underline">Buka Modul &rarr;</a>
         </div>
         <div class="bg-purple-50 p-4 rounded-lg border border-purple-100">
             <h3 class="font-bold text-purple-700">Manajemen Stok</h3>
