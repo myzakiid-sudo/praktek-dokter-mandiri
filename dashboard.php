@@ -31,6 +31,12 @@ include 'includes/header.php';
             <p class="text-sm text-gray-600 mt-1">Kelola riwayat klinis pasien.</p>
             <a href="modul/rekam_medis/index.php" class="mt-3 inline-block text-sm text-red-600 font-semibold hover:underline">Buka Modul &rarr;</a>
         </div>
+        <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+            <h3 class="font-bold text-yellow-700">Resep Obat</h3>
+            <p class="text-sm text-gray-600 mt-1">Pembuatan resep dan potong stok.</p>
+            <a href="modul/resep/index.php" class="mt-3 inline-block text-sm text-yellow-600 font-semibold hover:underline">Buka Modul &rarr;</a>
+        </div>
+        
         <div class="bg-purple-50 p-4 rounded-lg border border-purple-100">
             <h3 class="font-bold text-purple-700">Manajemen Stok</h3>
             <p class="text-sm text-gray-600 mt-1">Pantau stok obat di apotek.</p>
