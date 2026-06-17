@@ -51,6 +51,12 @@ include 'includes/header.php';
             <p class="text-sm text-gray-600 mt-1">Kelola tagihan dan status lunas.</p>
             <a href="modul/tagihan/index.php" class="mt-3 inline-block text-sm text-indigo-600 font-semibold hover:underline">Buka Modul &rarr;</a>
         </div>
+
+        <div class="bg-gray-100 p-4 rounded-lg border border-gray-200 shadow-sm">
+            <h3 class="font-bold text-gray-800">Laporan & Analitik</h3>
+            <p class="text-sm text-gray-600 mt-1">Rekap keuangan dan notifikasi apotek.</p>
+            <a href="modul/laporan/index.php" class="mt-3 inline-block text-sm text-gray-800 font-semibold hover:underline">Buka Laporan &rarr;</a>
+        </div>
     </div>
 </div>
 
