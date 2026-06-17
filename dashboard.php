@@ -57,6 +57,14 @@ include 'includes/header.php';
             <p class="text-sm text-gray-600 mt-1">Rekap keuangan dan notifikasi apotek.</p>
             <a href="modul/laporan/index.php" class="mt-3 inline-block text-sm text-gray-800 font-semibold hover:underline">Buka Laporan &rarr;</a>
         </div>
+
+        <?php if($_SESSION['role_id'] == 1): ?>
+        <div class="bg-gray-800 p-4 rounded-lg border border-gray-900 shadow-sm text-white">
+            <h3 class="font-bold text-gray-100">Manajemen User</h3>
+            <p class="text-sm text-gray-300 mt-1">Kelola akun dan hak akses pegawai.</p>
+            <a href="modul/user/index.php" class="mt-3 inline-block text-sm text-blue-300 font-semibold hover:underline">Buka Modul &rarr;</a>
+        </div>
+        <?php endif; ?>
     </div>
 </div>
 
