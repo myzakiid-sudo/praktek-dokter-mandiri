@@ -3,6 +3,9 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+// Hitung path relatif untuk logout dari subfolder mana pun
+$script_depth = substr_count($_SERVER['SCRIPT_NAME'], '/') - 1;
+$logout_path = str_repeat('../', max(0, $script_depth - 1)) . 'logout.php';
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -26,7 +29,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             <span class="text-sm text-blue-200 hidden md:inline-block">
                                 Halo, <?php echo htmlspecialchars($_SESSION['username']); ?>
                             </span>
-                            <a href="logout.php" class="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150">
+                            <a href="<?php echo $logout_path; ?>" class="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-md text-sm font-medium transition duration-150">
                                 Logout
                             </a>
                         </div>
